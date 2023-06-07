@@ -6,9 +6,12 @@
 void reverse_odd_length_strings(char words[][MAX_WORD_LENGTH], int num_words) {
     for (int i = 0; i < num_words; i++) {
         if (strlen(words[i]) % 2 == 1) {
+            
             int len = strlen(words[i]);
+            
             for (int j = 0; j < len / 2; j++) {
                 char temp = words[i][j];
+                
                 words[i][j] = words[i][len - 1 - j];
                 words[i][len - 1 - j] = temp;
             }
@@ -21,16 +24,20 @@ int main() {
 
     // Read 20 words from the user
     printf("Enter 20 words:\n");
+    
     for (int i = 0; i < 20; i++) {
         scanf("%s", words[i]);
     }
 
+    
     // Clear the input buffer
     while (getchar() != '\n');
 
+    
     // Reverse odd-length strings
     reverse_odd_length_strings(words, 20);
 
+    
     // Print the output
     printf("Output:\n");
     for (int i = 0; i < 20; i++) {
